@@ -1,10 +1,40 @@
 const CACHE_NAME = "my-cache-v1";
 const urlsToCache = [
     "/",
+    //html
     "/index.html",
+    "/contact.html",
+    "/menu.html",
+    "/news-detail.html",
+    "/news.html",
+
+    //css
     "/css/tooplate-crspy-kitchen.css",
+    "/css/bootstrap-icon.css",
+    "/css/bootstrap.mini",
+
+    //js
     "/app.js",
-    "/img/service1.png"
+    "/js/bootstrap.bundle.min.js",
+    "/js/custom.js",
+    "/js/query.min.js",
+
+    //video
+    "/video/production_ID_3769033.mp4",
+    //font
+    "/fonts/bootstrap-icons.woff",
+    "/fonts/bootstrap-icons.woof2",
+
+    //image
+    "/images/author/*",
+    "/images/breakfast/*",
+    "/images/dinner/*",
+    "/images/header/*",
+    "/images/lunch/*",
+    "/images/news/*",
+    "/images/slide/*",
+    "/images/team/*"
+    
 ];
 
 // Install event: Caches the assets
