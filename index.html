@@ -10,6 +10,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-icons.css" rel="stylesheet">
     <link href="css/tooplate-crispy-kitchen.css" rel="stylesheet">
+    <link rel="manifest" href="/manifest.json">
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
@@ -20,7 +21,33 @@
         }
     </script>
     
-  
+    <style>
+        .popup {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            color: white;
+            border-radius: 5px;
+            z-index: 9999;
+            font-weight: bold;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
+        .popup.online {
+            background-color: #4caf50;
+        }
+        .popup.offline {
+            background-color: #f44336;
+        }
+        @keyframes fadein {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes fadeout {
+            from { opacity: 1; }
+            to { opacity: 0; }
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg bg-white shadow-lg">
@@ -328,5 +355,14 @@
                            </div>
                            </div>
                            </div>
+                           <h1>Welcome to My PWA!</h1>
+
+                           <div id="sw-status"></div>
+                       
+                           <button id="install-btn" style="display:none;">Install App</button>
+                       
+                           <script src="/app.js"></script>
+                           <script src="service-worker.js"></script>
+
                            </body>
                            </html>
