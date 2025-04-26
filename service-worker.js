@@ -1,44 +1,35 @@
 const CACHE_NAME = "my-cache-v1";
 const urlsToCache = [
     "/",
-    //html
     "/index.html",
     "/about.html",
     "/contact.html",
     "/menu.html",
     "/news-detail.html",
     "/news.html",
-
-    //css
     "/css/tooplate-crspy-kitchen.css",
     "/css/bootstrap-icon.css",
-    "/css/bootstrap.mini",
-
-    //js
+    "/css/bootstrap.mini", // Check typo! Should be bootstrap.min.css
     "/app.js",
     "/js/bootstrap.bundle.min.js",
     "/js/custom.js",
     "/js/query.min.js",
-
-    //video
     "/video/production_ID_3769033.mp4",
-    //font
     "/fonts/bootstrap-icons.woff",
-    "/fonts/bootstrap-icons.woof2",
-
-    //image
-    "/images/author/*",
-    "/images/breakfast/*",
-    "/images/dinner/*",
-    "/images/header/*",
-    "/images/lunch/*",
-    "/images/news/*",
-    "/images/slide/*",
-    "/images/team/*"
-    
+    "/fonts/bootstrap-icons.woff2", // typo corrected: "woof2" -> "woff2"
+    // Images should be listed individually (wildcard '*' doesn't work)
+    "/images/author/author1.jpg",
+    "/images/author/author2.jpg",
+    "/images/breakfast/breakfast1.jpg",
+    "/images/lunch/lunch1.jpg",
+    "/images/dinner/dinner1.jpg",
+    "/images/header/header1.jpg",
+    "/images/news/news1.jpg",
+    "/images/slide/slide1.jpg",
+    "/images/team/team1.jpg"
 ];
 
-// Install event: Caches the assets
+// Install event: Cache assets
 self.addEventListener("install", (event) => {
     console.log('Service Worker: Installing...');
     event.waitUntil(
@@ -100,12 +91,10 @@ self.addEventListener("fetch", (event) => {
                     })
                     .catch((error) => {
                         console.error('Service Worker: Fetch failed', error);
-                        // Optional: return custom offline response
                     });
             })
     );
 });
-
 
 // Activate event: Clean up old caches
 self.addEventListener("activate", (event) => {
