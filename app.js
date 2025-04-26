@@ -1,4 +1,3 @@
-// Status display element
 const statusElement = document.getElementById('sw-status');
 
 // Function to update status display
@@ -18,7 +17,7 @@ if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('/service-worker.js')
             .then(registration => {
                 console.log('Service Worker registered with scope:', registration.scope);
-                statusElement.textContent = 'Service Worker registered successfully!';
+                statusElement.textContent = 'You are online. Service worker is active.';
                 statusElement.className = 'online';
             })
             .catch(error => {
